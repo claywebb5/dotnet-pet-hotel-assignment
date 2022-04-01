@@ -59,6 +59,16 @@ namespace pet_hotel.Controllers
         }
 
         // ============<POST>=============
+        [HttpPost]
+
+        public IActionResult Create(Pet pet)
+        {
+            _context.Add(pet);
+            
+            _context.SaveChanges();
+
+            return CreatedAtAction(nameof(Create), new {id = pet.id}, pet);
+        }
         
     }
 }
