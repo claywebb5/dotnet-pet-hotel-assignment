@@ -51,12 +51,14 @@ namespace pet_hotel.Controllers
         // }
 
         // ============<GET - All pets>=============
-        // [HttpGet]
-        // public IEnumerable<Pet> GetPets()
-        // {
-        //     return _context.Pets 
-        //     .Include(Pet => Pet.ownedBy);
-        // }
+        [HttpGet]
+        public IEnumerable<Pet> GetPets()
+        {
+            return _context.Pets 
+            .Include(Pet => Pet.ownedBy);
+        }
 
+        // ============<POST>=============
+        
     }
 }
